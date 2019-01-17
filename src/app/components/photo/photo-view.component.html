@@ -1,23 +1,25 @@
-<div class="row">
-    <div class="col-10">
-        <h1>{{ photo.title }}</h1>
+<div *ngIf="photo; else noPhoto">
+    <div class="row">
+        <div class="col-10">
+            <h1>{{ photo.title }}</h1>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-light" (click)="goTo.emit('gallery')"><i class="fa fa-eye"></i> Volver</button>
+        </div>
     </div>
-    <div class="col-2">
-        <button type="button" class="btn btn-light" (click)="goTo.emit('gallery')"><i class="fa fa-eye"></i> Volver</button>
+    <div class="row">
+        <div class="col-12">
+            <img src="{{ photo.cover_photo.urls.full }}" alt="{{ photo.cover_photo.description }}" title="Photo by {{photo.user.first_name}} | {{ photo.description }}" class="img-fluid" />
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <img src="{{ photo.cover_photo.urls.full }}" alt="{{ photo.cover_photo.description }}" title="Photo by {{photo.user.first_name}} | {{ photo.description }}" class="img-fluid" />
-    </div>
-</div>
-<div class="row author mt-3">
-    <div class="col-8">
-        <img src="{{ photo.user.profile_image.large }}" alt="Profile Photo: {{ photo.user.first_name }} {{ photo.user.last_name }}" title="{{ photo.user.first_name }} {{ photo.user.last_name }}" /> {{ photo.user.first_name }} {{ photo.user.last_name }}
-    </div>
-    <div class="col-4 pull-right">
-        <div>
+    <div class="row author mt-3">
+        <div class="col-8">
+            <img src="{{ photo.user.profile_image.large }}" alt="Profile Photo: {{ photo.user.first_name }} {{ photo.user.last_name }}" title="{{ photo.user.first_name }} {{ photo.user.last_name }}" /> {{ photo.user.first_name }} {{ photo.user.last_name
+            }}
+        </div>
+        <div class="col-4 pull-right">
             <span class="badge badge-success" *ngFor="let tag of photo.tags">{{ tag.title }}</span>
         </div>
     </div>
 </div>
+<ng-template #noPhoto><button type="button" class="btn btn-light" (click)="goTo.emit('gallery')"><i class="fa fa-eye"></i> Volver</button></ng-template>

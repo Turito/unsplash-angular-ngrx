@@ -16,6 +16,7 @@ import { GalleryComponent as GalleryContainer } from './containers/gallery/galle
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { SearchComponent } from './components/search/search.component';
 import { PhotoComponent } from './containers/photo/photo.component';
+import { PhotoThumbComponent } from './components/photo-thumb/photo-thumb.component';
 import { PhotoViewComponent } from './components/photo/photo-view.component';
 
 
@@ -26,7 +27,8 @@ import { PhotoViewComponent } from './components/photo/photo-view.component';
     SearchComponent,
     GalleryComponent,
     PhotoComponent,
-    PhotoViewComponent
+    PhotoViewComponent,
+    PhotoThumbComponent
   ],
   imports: [
     BrowserModule,
