@@ -1,0 +1,18 @@
+<div class="gallery row text-center text-lg-left" *ngIf="photos.results">
+    <div *ngFor="let photo of photos.results" class="col-lg-3 col-md-4 col-6">
+        <div class="cover_image mb-3">
+            <div class="hover" (click)="viewPhoto(photo.id)"><i class="fa fa-eye"></i></div>
+            <img src="{{ photo.cover_photo.urls.small }}" alt="{{ photo.title }}" title="{{ photo.title }}" class="img-fluid" />
+            <div class="img-desc-wrap">
+                <div class="likes-watch-wrap mt-2 clearfix">
+                    <div class="likes pull-left">
+                        <i class="fa fa-heart"></i> {{ photo.cover_photo.likes }}
+                    </div>
+                    <div class="watch pull-right">
+                        {{ photo.title }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

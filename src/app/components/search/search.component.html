@@ -1,0 +1,7 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="navbar-collapse" id="navbarsUnsplash">
+        <form class="form-inline my-5 my-lg-0">
+            <input #term type="text" (keyup)="queryDone.emit(term.value)" class="form-control mr-sm-2" placeholder="Buscar..." />
+        </form>
+    </div>
+</nav>
