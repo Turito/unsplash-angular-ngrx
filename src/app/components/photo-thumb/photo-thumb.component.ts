@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UnsplashService } from '../../services/unsplash.service';
-import { IPhoto } from '../../models/photo.interface';
+import { ICover } from '../../models/cover.interface';
 
 @Component({
   selector: 'app-photo-thumb',
@@ -14,7 +14,7 @@ export class PhotoThumbComponent implements OnInit {
   width: number = 400;
   height: number = 400;
 
-  cover: IPhoto;
+  cover: ICover;
   show: boolean = false;
 
   constructor( private _unsplashService: UnsplashService ) { }

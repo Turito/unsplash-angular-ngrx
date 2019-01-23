@@ -1,2 +1,2 @@
-<app-search (queryDone)="searchGallery($event)"></app-search>
+<app-search [query]="query$ | async" (queryDone)="searchGallery($event)"></app-search>
 <app-gallery [photos]="photos$ | async" (photoSelected)="viewPhoto($event)"></app-gallery>

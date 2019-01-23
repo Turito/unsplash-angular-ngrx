@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhotoEffects } from './store/effects/photo.effects';
+import { SearchEffects } from './store/effects/search.effects';
 import { UnsplashService } from './services/unsplash.service';
 import { GalleryComponent as GalleryContainer } from './containers/gallery/gallery.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -34,7 +35,7 @@ import { PhotoViewComponent } from './components/photo/photo-view.component';
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([PhotoEffects]),
+    EffectsModule.forRoot([SearchEffects, PhotoEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     StoreDevtoolsModule.instrument(),
     AppRoutingModule
